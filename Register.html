@@ -73,15 +73,41 @@
 <script src="main.js"></script>
 <script>
 async function handleSubmit(){
-    const e=document.getElementById('email').value.trim(),fn=document.getElementById('firstName').value.trim(),ln=document.getElementById('lastName').value.trim(),af=document.getElementById('affiliation').value.trim(),ag=document.getElementById('agreeTerms').checked,ee=document.getElementById('emailError'),sb=document.getElementById('submitBtn');
+    const e=document.getElementById('email').value.trim();
+    const fn=document.getElementById('firstName').value.trim();
+    const ln=document.getElementById('lastName').value.trim();
+    const af=document.getElementById('affiliation').value.trim();
+    const ag=document.getElementById('agreeTerms').checked;
+    const ee=document.getElementById('emailError');
+    const sb=document.getElementById('submitBtn');
+
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){ee.style.display='block';document.getElementById('email').focus();return;}
     ee.style.display='none';
     if(!fn||!ln){alert('Please fill in your first and last name.');return;}
     if(!ag){alert('Please agree to receive challenge communications to proceed.');return;}
     sb.disabled=true;sb.textContent='Submitting...';
-    const GOOGLE_SCRIPT_URL='https://script.google.com/macros/s/AKfycbzCPFCs7D0JNwtz2y5Nce20DQU_EMUQIQsvCR5uJ-4aD10fePCTy_M3cJP5HzFifpRS/exec';
-    try{await fetch(GOOGLE_SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:e,name:fn+' '+ln,affiliation:af||''})});document.getElementById('formSection').style.display='none';document.getElementById('successSection').style.display='block';}
-    catch(err){alert('Something went wrong. Please try again or contact Ying.Chen@campus.lmu.de directly.');sb.disabled=false;sb.textContent='Register →';}
+
+    const GOOGLE_SCRIPT_URL='https://script.google.com/macros/s/AKfycbySjNAccoddC527lorMLjuH4BcuN6WMTfZlH1SbY2_weyLIF-a0ezu_USSZ5emMKuFb/exec';
+
+    try {
+        const formData = new FormData();
+        formData.append('email', e);
+        formData.append('name', fn + ' ' + ln);
+        formData.append('affiliation', af || '');
+
+        await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: formData
+        });
+
+        document.getElementById('formSection').style.display='none';
+        document.getElementById('successSection').style.display='block';
+    } catch(err) {
+        alert('Something went wrong. Please try again or contact Ying.Chen@campus.lmu.de directly.');
+        sb.disabled=false;
+        sb.textContent='Register →';
+    }
 }
 document.getElementById('email').addEventListener('input',()=>{document.getElementById('emailError').style.display='none';});
 </script>
