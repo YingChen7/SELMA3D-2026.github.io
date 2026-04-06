@@ -38,7 +38,7 @@
 </head>
 <body>
 
-<nav class="navbar" id="navbar"><div class="container nav-inner"><a href="Home.html" class="nav-brand">SELMA3D 2026</a><button class="nav-toggle" onclick="toggleNav()">☰</button><div class="nav-links"><a href="Home.html">Home</a><a href="Tasks.html">Tasks</a><a href="Dataset.html">Dataset</a><a href="Timeline.html">Timeline</a><a href="Assessment.html">Assessment</a><a href="Organizers.html">Organizers</a><a href="Register.html" class="nav-join">Join Challenge</a></div></div></nav>
+<nav class="navbar" id="navbar"><div class="container nav-inner"><button class="nav-toggle" onclick="toggleNav()">☰</button><div class="nav-links"><a href="Home.html">Home</a><a href="Tasks.html">Tasks</a><a href="Dataset.html">Dataset</a><a href="Timeline.html">Timeline</a><a href="Assessment.html">Assessment</a><a href="Organizers.html">Organizers</a><a href="Register.html" class="nav-join">Join Challenge</a></div></div></nav>
 
 <div class="page-wrapper">
     <div class="reg-card">
@@ -79,7 +79,7 @@ async function handleSubmit(){
     if(!fn||!ln){alert('Please fill in your first and last name.');return;}
     if(!ag){alert('Please agree to receive challenge communications to proceed.');return;}
     sb.disabled=true;sb.textContent='Submitting...';
-    const GOOGLE_SCRIPT_URL='YOUR_GOOGLE_APPS_SCRIPT_URL';
+    const GOOGLE_SCRIPT_URL='https://script.google.com/macros/s/AKfycbzCPFCs7D0JNwtz2y5Nce20DQU_EMUQIQsvCR5uJ-4aD10fePCTy_M3cJP5HzFifpRS/exec';
     try{await fetch(GOOGLE_SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:e,name:fn+' '+ln,affiliation:af||''})});document.getElementById('formSection').style.display='none';document.getElementById('successSection').style.display='block';}
     catch(err){alert('Something went wrong. Please try again or contact Ying.Chen@campus.lmu.de directly.');sb.disabled=false;sb.textContent='Register →';}
 }
