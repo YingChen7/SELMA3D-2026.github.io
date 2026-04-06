@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Tasks — SELMA3D 2026</title><link rel="stylesheet" href="style.css"></head><body>
+<nav class="navbar" id="navbar"><div class="container nav-inner"><button class="nav-toggle" onclick="toggleNav()">☰</button><div class="nav-links"><a href="Home.html">Home</a><a href="Tasks.html">Tasks</a><a href="Dataset.html">Dataset</a><a href="Timeline.html">Timeline</a><a href="Assessment.html">Assessment</a><a href="Organizers.html">Organizers</a><a href="Register.html" class="nav-join">Join Challenge</a></div></div></nav>
+<div class="page-header"><div class="hero-particles"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="container"><h1>Assessment</h1></div></div>
+<div class="content"><div class="container">
+ 
+<div class="fade-in">
+    <h2>Evaluation</h2>
+    <p class="prose">During the model evaluation, we will separately evaluate the model's performance on isolated structures and contiguous structures.</p>
+ 
+    <h3 style="margin-top:32px">Isolated Structures</h3>
+    <p class="prose">For assessing segmentation results of both dense isolated and sparse isolated structures, two metrics will be employed:</p>
+    <p class="prose" style="margin-top:12px">
+        1) Volumetric Dice Similarity Coefficient (DSC)<br>
+        2) Panoptic Quality (PQ) [1]
+    </p>
+    <h3 style="margin-top:32px">Contiguous Structures</h3>
+    <p class="prose">For assessing segmentation results of both dense contiguous and sparse contiguous structures, again two metrics will be employed:</p>
+    <p class="prose" style="margin-top:12px">
+        1) Volumetric Dice Similarity Coefficient (DSC)<br>
+        2) Centerline-Dice Similarity Coefficient (clDice)[2]
+    </p>
+ 
+    <div style="margin-top:32px; padding:20px 24px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-sm); font-size:15px; color:var(--text-dim); line-height:1.8;">
+        <strong style="color:var(--text)">References</strong><br>
+        [1] Kofler, F., Möller, H., Buchner, J., et al. (2023). Panoptica: Instance-wise Evaluation of 3D Semantic and Instance Segmentation Maps. <em>arXiv preprint arXiv:2312.02608</em>.<br>
+        [2] S. Shit, J.C. Paetzold, A. Sekuboyina, et al. clDice — a novel topology-preserving loss function for tubular structure segmentation. In <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition</em>, 2021, pp. 16555–16564.
+    </div>
+</div>
+ 
+<div class="fade-in" style="margin-top:64px">
+    <h2>Ranking</h2>
+    <p class="prose">The ranking of a submitted algorithm is determined through the following process:</p>
+    <p class="prose" style="margin-top:16px">
+        • Compute the metric scores for each test case.<br>
+        • Calculate the average of the metric scores across all test cases for each individual metric.<br>
+        • Rank the averaged scores for each metric independently based on its specific optimization trend (e.g., higher is better or lower is better).<br>
+        • Determine the ranking of the submitted algorithm by calculating the mean rank across all metrics separately for dense isolated, sparse isolated, dense contiguous, and sparse contiguous structures.<br>
+        • Determine the overall ranking of the submitted algorithm by calculating the mean rank across two structure types.<br>
+        • If two or more algorithms have equal final ranks, the prize will be shared equally among them.
+    </p>
+</div>
+ 
+</div></div>
+<footer class="footer"><div class="container"><p>© 2026 <a href="https://www.helmholtz-munich.de/en/bioengineering-center/ibio" target="_blank">Institute for Intelligent Biotechnologies</a>, Helmholtz Munich</p><p style="margin-top:6px">Contact: <a href="mailto:Ying.Chen@campus.lmu.de">Ying.Chen@campus.lmu.de</a></p></div></footer><script src="main.js"></script></body></html>

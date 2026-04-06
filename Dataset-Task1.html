@@ -1,0 +1,188 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Dataset — SELMA3D 2026</title><link rel="stylesheet" href="style.css"></head><body>
+<nav class="navbar" id="navbar"><div class="container nav-inner"><button class="nav-toggle" onclick="toggleNav()">☰</button><div class="nav-links"><a href="Home.html">Home</a><a href="Tasks.html">Tasks</a><a href="Dataset.html">Dataset</a><a href="Timeline.html">Timeline</a><a href="Assessment.html">Assessment</a><a href="Organizers.html">Organizers</a><a href="Register.html" class="nav-join">Join Challenge</a></div></div></nav>
+<div class="page-header"><div class="hero-particles"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="container"><h1>Dataset for Task 1</h1></div></div>
+
+<div class="content"><div class="container">
+
+<!-- ═══ UNANNOTATED ═══ -->
+<div class="fade-in">
+    <h2>Training Subset — Unannotated</h2>
+    <p class="prose">A total of around <strong>35,050 patches</strong> of size 300×300×300 voxels, cropped from whole organs or organisms. These patches encompass a wide range of structural densities. Information on the original volume corresponding to each patch will also be provided.</p>
+
+    <h3 style="margin-top:28px">Isolated Structures (~17,400 patches)</h3>
+    <table class="data-table">
+        <thead><tr><th>Structure Type</th><th>Patches</th><th>Source Volumes</th></tr></thead>
+        <tbody>
+            <tr><td>c-Fos+ cells [1]</td><td>~5,300</td><td>18 3D images</td></tr>
+            <tr><td>Cell nuclei [2]</td><td>~3,400</td><td>4 3D images</td></tr>
+            <tr><td>Amyloid-beta plaques [3]</td><td>~1,600</td><td>4 3D images</td></tr>
+            <tr><td>Chondrocytes [4]</td><td>~1,100</td><td>1 3D image</td></tr>
+            <tr><td>Chondrogenic cells [4]</td><td>~1,100</td><td>1 3D image</td></tr>
+            <tr><td>Dopaminergic neurons [5]</td><td>~2,500</td><td>1 3D image</td></tr>
+            <tr><td>Astrocytes [5]</td><td>~2,400</td><td>1 3D image</td></tr>
+        </tbody>
+    </table>
+
+    <h3 style="margin-top:28px">Contiguous Structures (~17,650 patches)</h3>
+    <table class="data-table">
+        <thead><tr><th>Structure Type</th><th>Patches</th><th>Source Volumes</th></tr></thead>
+        <tbody>
+            <tr><td>Blood vessels [6]</td><td>~2,600</td><td>9 3D images</td></tr>
+            <tr><td>Arteries [7]</td><td>~800</td><td>4 3D images</td></tr>
+            <tr><td>Sympathetic nerves [7]</td><td>~2,000</td><td>4 3D images</td></tr>
+            <tr><td>Peripheral nerves (PGP9.5) [4, 5, 7, 8]</td><td>~4,600</td><td>5 3D images</td></tr>
+            <tr><td>Lymphatic vessels [7]</td><td>~650</td><td>4 3D images</td></tr>
+            <tr><td>Cranial nerves [4, 5]</td><td>~4,500</td><td>2 3D images</td></tr>
+            <tr><td>Axonal markers [9]</td><td>~2,500</td><td>8 3D images</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ═══ ANNOTATED ═══ -->
+<div class="fade-in" style="margin-top:64px">
+    <h2>Training Subset — Annotated</h2>
+    <p class="prose">A total of <strong>82 patches</strong> of size 200×200×200 voxels with precise manual annotations.</p>
+
+    <h3 style="margin-top:28px">Dense Isolated Structures (18 patches)</h3>
+    <table class="data-table">
+        <thead><tr><th>Structure Type</th><th>Patches</th></tr></thead>
+        <tbody>
+            <tr><td>c-Fos+ cells [1]</td><td>9</td></tr>
+            <tr><td>Cell nuclei [2]</td><td>9</td></tr>
+        </tbody>
+    </table>
+
+    <h3 style="margin-top:28px">Sparse Isolated Structures (20 patches)</h3>
+    <table class="data-table">
+        <thead><tr><th>Structure Type</th><th>Patches</th></tr></thead>
+        <tbody>
+            <tr><td>Amyloid-beta plaques [3]</td><td>20</td></tr>
+        </tbody>
+    </table>
+
+    <h3 style="margin-top:28px">Dense Contiguous Structures (16 patches)</h3>
+    <table class="data-table">
+        <thead><tr><th>Structure Type</th><th>Patches</th></tr></thead>
+        <tbody>
+            <tr><td>Blood vessels [6]</td><td>16</td></tr>
+        </tbody>
+    </table>
+
+    <h3 style="margin-top:28px">Sparse Contiguous Structures (28 patches)</h3>
+    <table class="data-table">
+        <thead><tr><th>Structure Type</th><th>Patches</th></tr></thead>
+        <tbody>
+            <tr><td>Peripheral nerves [8]</td><td>16</td></tr>
+            <tr><td>Axonal markers [9]</td><td>12</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ═══ PRELIMINARY TEST ═══ -->
+<div class="fade-in" style="margin-top:64px">
+    <h2>Preliminary Test Set</h2>
+    <p class="prose">A total of <strong>26 patches</strong> of size 200×200×200 voxels. Ground truth annotations are withheld from participants for evaluation purposes.</p>
+
+    <h3 style="margin-top:28px">Dense Isolated Structures (5 patches)</h3>
+    <table class="data-table">
+        <thead><tr><th>Structure Type</th><th>Patches</th></tr></thead>
+        <tbody>
+            <tr><td>c-Fos+ cells [1]</td><td>1</td></tr>
+            <tr><td>Cell nuclei [2]</td><td>1</td></tr>
+            <tr><td>Microglia [10]</td><td>3</td></tr>
+        </tbody>
+    </table>
+
+    <h3 style="margin-top:28px">Sparse Isolated Structures (7 patches)</h3>
+    <table class="data-table">
+        <thead><tr><th>Structure Type</th><th>Patches</th></tr></thead>
+        <tbody>
+            <tr><td>Amyloid-beta plaques [3]</td><td>3</td></tr>
+            <tr><td>Fluorescent protein (EGFP) [11]</td><td>4</td></tr>
+        </tbody>
+    </table>
+
+    <h3 style="margin-top:28px">Dense Contiguous Structures (6 patches)</h3>
+    <table class="data-table">
+        <thead><tr><th>Structure Type</th><th>Patches</th></tr></thead>
+        <tbody>
+            <tr><td>Blood vessels [6]</td><td>2</td></tr>
+            <tr><td>Gut lymphatic vessels [7]</td><td>4</td></tr>
+        </tbody>
+    </table>
+
+    <h3 style="margin-top:28px">Sparse Contiguous Structures (8 patches)</h3>
+    <table class="data-table">
+        <thead><tr><th>Structure Type</th><th>Patches</th></tr></thead>
+        <tbody>
+            <tr><td>Peripheral nerves [8]</td><td>2</td></tr>
+            <tr><td>Axonal markers [9]</td><td>2</td></tr>
+            <tr><td>Gut nerves [7]</td><td>4</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ═══ FINAL TEST ═══ -->
+<div class="fade-in" style="margin-top:64px">
+    <h2>Final Test Set</h2>
+    <p class="prose">A total of <strong>96 patches</strong> of size 200×200×200 voxels. Ground truth annotations are withheld from participants for evaluation purposes.</p>
+
+    <h3 style="margin-top:28px">Dense Isolated Structures (22 patches)</h3>
+    <table class="data-table">
+        <thead><tr><th>Structure Type</th><th>Patches</th></tr></thead>
+        <tbody>
+            <tr><td>c-Fos+ cells [1]</td><td>5</td></tr>
+            <tr><td>Cell nuclei [2]</td><td>4</td></tr>
+            <tr><td>Microglia [10]</td><td>13</td></tr>
+        </tbody>
+    </table>
+
+    <h3 style="margin-top:28px">Sparse Isolated Structures (24 patches)</h3>
+    <table class="data-table">
+        <thead><tr><th>Structure Type</th><th>Patches</th></tr></thead>
+        <tbody>
+            <tr><td>Amyloid-beta plaques [3]</td><td>11</td></tr>
+            <tr><td>Fluorescent protein (EGFP) [11]</td><td>13</td></tr>
+        </tbody>
+    </table>
+
+    <h3 style="margin-top:28px">Dense Contiguous Structures (22 patches)</h3>
+    <table class="data-table">
+        <thead><tr><th>Structure Type</th><th>Patches</th></tr></thead>
+        <tbody>
+            <tr><td>Blood vessels [6]</td><td>8</td></tr>
+            <tr><td>Gut lymphatic vessels [7]</td><td>14</td></tr>
+        </tbody>
+    </table>
+
+    <h3 style="margin-top:28px">Sparse Contiguous Structures (28 patches)</h3>
+    <table class="data-table">
+        <thead><tr><th>Structure Type</th><th>Patches</th></tr></thead>
+        <tbody>
+            <tr><td>Peripheral nerves [8]</td><td>8</td></tr>
+            <tr><td>Axonal markers [9]</td><td>6</td></tr>
+            <tr><td>Gut nerves [7]</td><td>14</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ═══ REFERENCES ═══ -->
+<div class="fade-in" style="margin-top:64px">
+    <div style="padding:20px 24px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-sm); font-size:15px; color:var(--text-dim); line-height:1.8;">
+        <strong style="color:var(--text)">References</strong><br>
+        [1] D. Kaltenecker, R. Al-Maskari, M. Negwer, et al. Virtual reality empowered deep learning analysis of brain activity. <em>Nature Methods</em> 21: 1306–1315, 2024 April.<br>
+        [2] S. Zhao, M.I. Todorov, R. Cai, et al. Cellular and molecular probing of intact human organs. <em>Cell</em> 180(4): 796-812, 2020 Feb.<br>
+        [3] H.S. Bhatia, A. Brunner, F. Öztürk, et al. Spatial proteomics in three-dimensional intact specimens. <em>Cell</em> 185(26): 5040-5058, 2022 Dec.<br>
+        [4] R. Blain, G. Couly, E. Shotar, et al. A tridimensional atlas of the developing human head. <em>Cell</em> 186(26): 5910-5924, 2023 Dec.<br>
+        [5] <a href="https://mab3d-atlas.com/validated-antibody-database" target="_blank">https://mab3d-atlas.com/validated-antibody-database</a><br>
+        [6] M.I. Todorov, J.C. Paetzold, O. Schoppe, et al. Machine learning analysis of whole mouse brain vasculature. <em>Nature Methods</em> 17: 442-449, 2020 Mar.<br>
+        [7] H. Mai, J. Luo, L. Hoeher, et al. Whole-body cellular mapping in mouse using standard IgG antibodies. <em>Nature Biotechnology</em> 42: 617–627, 2023 July.<br>
+        [8] R. Cai, C. Pan, A. Ghasemigharagoz, et al. Panoptic imaging of transparent mice reveals whole-body neuronal projections and skull-meninges connections. <em>Nature Neuroscience</em> 22: 317-327, 2019 Dec.<br>
+        [9] E. Özen, et al. Multicolor High Resolution SCAPE microscopy for Understanding Neural Connectivity. <em>Optics and the Brain</em>, Optica Publishing Group, 2025.<br>
+        [10] H. Mai, Z. Rong, S. Zhao, et al. Scalable tissue labeling and clearing of intact human organs. <em>Nature Protocols</em> 17: 2188-2215, 2022 July.<br>
+        [11] J. Luo, M. Molbay, Y. Chen, et al. Nanocarrier imaging at single-cell resolution across entire mouse bodies with deep learning. <em>Nature Biotechnology</em>, 2025 Jan.
+    </div>
+</div>
+
+</div></div>
+<footer class="footer"><div class="container"><p>© 2026 <a href="https://www.helmholtz-munich.de/en/bioengineering-center/ibio" target="_blank">Institute for Intelligent Biotechnologies</a>, Helmholtz Munich</p><p style="margin-top:6px">Contact: <a href="mailto:Ying.Chen@campus.lmu.de">Ying.Chen@campus.lmu.de</a></p></div></footer><script src="main.js"></script></body></html>

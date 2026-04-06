@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register — SELMA3D 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { min-height: 100vh; display: flex; flex-direction: column; }
+        .page-wrapper { flex:1; display:flex; align-items:center; justify-content:center; padding:100px 24px 60px; }
+        .reg-card { width:100%; max-width:520px; }
+        .reg-header { text-align:center; margin-bottom:36px; }
+        .reg-badge { display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:5px 14px;font-size:12px;font-weight:600;color:var(--accent);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:18px; }
+        .reg-header h1 { font-family:var(--font-display);font-size:2rem;font-weight:800;line-height:1.2;margin-bottom:10px; }
+        .reg-header p { color:var(--text-muted);font-size:15px; }
+        .fg { margin-bottom:18px; }
+        .fl { display:block;font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px; }
+        .fl .req { color:#dc2626;margin-left:2px; }
+        .fi { width:100%;padding:11px 14px;font-size:15px;font-family:var(--font-body);color:var(--text);background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);outline:none;transition:border-color .2s,box-shadow .2s; }
+        .fi:focus { border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow); }
+        .fi::placeholder { color:var(--text-dim); }
+        .fr { display:grid;grid-template-columns:1fr 1fr;gap:16px; }
+        .fe { font-size:13px;color:#dc2626;margin-top:5px;display:none; }
+        .fc { display:flex;align-items:flex-start;gap:10px;margin-top:4px; }
+        .fc input[type="checkbox"] { margin-top:4px;accent-color:var(--accent);width:16px;height:16px;cursor:pointer; }
+        .fc label { font-size:13.5px;color:var(--text-muted);cursor:pointer;line-height:1.5; }
+        .btn-sub { width:100%;padding:13px 28px;font-size:15px;font-weight:600;font-family:var(--font-body);color:#fff;background:var(--accent);border:none;border-radius:var(--radius-sm);cursor:pointer;transition:all .2s;margin-top:8px; }
+        .btn-sub:hover { filter:brightness(1.1);transform:translateY(-1px); }
+        .btn-sub:disabled { opacity:.5;cursor:not-allowed;transform:none;filter:none; }
+        .ok-msg { display:none;text-align:center;padding:40px 0; }
+        .ok-icon { width:64px;height:64px;border-radius:50%;background:rgba(5,150,105,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:28px; }
+        .ok-msg h2 { font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:10px; }
+        .ok-msg p { color:var(--text-muted);font-size:15px;margin-bottom:24px; }
+        .btn-back { display:inline-flex;align-items:center;gap:6px;padding:10px 24px;font-size:14px;font-weight:600;color:var(--accent);background:var(--accent-glow);border:1px solid var(--border);border-radius:var(--radius-sm);text-decoration:none;transition:all .2s; }
+        .btn-back:hover { border-color:var(--accent);text-decoration:none; }
+        @media(max-width:540px){.fr{grid-template-columns:1fr}.reg-header h1{font-size:1.6rem}}
+    </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar"><div class="container nav-inner"><a href="Home.html" class="nav-brand">SELMA3D 2026</a><button class="nav-toggle" onclick="toggleNav()">☰</button><div class="nav-links"><a href="Home.html">Home</a><a href="Tasks.html">Tasks</a><a href="Dataset.html">Dataset</a><a href="Timeline.html">Timeline</a><a href="Assessment.html">Assessment</a><a href="Organizers.html">Organizers</a><a href="Register.html" class="nav-join">Join Challenge</a></div></div></nav>
+
+<div class="page-wrapper">
+    <div class="reg-card">
+        <div id="formSection">
+            <div class="reg-header">
+                <div class="reg-badge">Registration</div>
+                <h1>Join the Challenge</h1>
+                <p>Register to participate in SELMA3D 2026. We'll keep you updated on dataset releases, deadlines, and announcements.</p>
+            </div>
+            <div class="fg">
+                <label class="fl">Email address <span class="req">*</span></label>
+                <input type="email" id="email" class="fi" placeholder="you@institution.edu" required>
+                <div class="fe" id="emailError">Please enter a valid email address.</div>
+            </div>
+            <div class="fr">
+                <div class="fg"><label class="fl">First name <span class="req">*</span></label><input type="text" id="firstName" class="fi" placeholder="First name" required></div>
+                <div class="fg"><label class="fl">Last name <span class="req">*</span></label><input type="text" id="lastName" class="fi" placeholder="Last name" required></div>
+            </div>
+            <div class="fg"><label class="fl">Affiliation</label><input type="text" id="affiliation" class="fi" placeholder="University or institution"></div>
+            <div class="fg"><div class="fc"><input type="checkbox" id="agreeTerms"><label for="agreeTerms">I agree to receive challenge-related communications and understand that my email will be used solely for SELMA3D 2026 correspondence.</label></div></div>
+            <button class="btn-sub" id="submitBtn" onclick="handleSubmit()">Register →</button>
+        </div>
+        <div class="ok-msg" id="successSection">
+            <div class="ok-icon">✓</div>
+            <h2>You're registered!</h2>
+            <p>Thank you for your interest in SELMA3D 2026. We'll be in touch with updates on dataset releases and key dates.</p>
+            <a href="Home.html" class="btn-back">← Back to SELMA3D 2026</a>
+        </div>
+    </div>
+</div>
+
+<script src="main.js"></script>
+<script>
+async function handleSubmit(){
+    const e=document.getElementById('email').value.trim(),fn=document.getElementById('firstName').value.trim(),ln=document.getElementById('lastName').value.trim(),af=document.getElementById('affiliation').value.trim(),ag=document.getElementById('agreeTerms').checked,ee=document.getElementById('emailError'),sb=document.getElementById('submitBtn');
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){ee.style.display='block';document.getElementById('email').focus();return;}
+    ee.style.display='none';
+    if(!fn||!ln){alert('Please fill in your first and last name.');return;}
+    if(!ag){alert('Please agree to receive challenge communications to proceed.');return;}
+    sb.disabled=true;sb.textContent='Submitting...';
+    const GOOGLE_SCRIPT_URL='YOUR_GOOGLE_APPS_SCRIPT_URL';
+    try{await fetch(GOOGLE_SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:e,name:fn+' '+ln,affiliation:af||''})});document.getElementById('formSection').style.display='none';document.getElementById('successSection').style.display='block';}
+    catch(err){alert('Something went wrong. Please try again or contact Ying.Chen@campus.lmu.de directly.');sb.disabled=false;sb.textContent='Register →';}
+}
+document.getElementById('email').addEventListener('input',()=>{document.getElementById('emailError').style.display='none';});
+</script>
+</body></html>

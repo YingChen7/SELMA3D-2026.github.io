@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Tasks — SELMA3D 2026</title><link rel="stylesheet" href="style.css"></head><body>
+<nav class="navbar" id="navbar"><div class="container nav-inner"><button class="nav-toggle" onclick="toggleNav()">☰</button><div class="nav-links"><a href="Home.html">Home</a><a href="Tasks.html">Tasks</a><a href="Dataset.html">Dataset</a><a href="Timeline.html">Timeline</a><a href="Assessment.html">Assessment</a><a href="Organizers.html">Organizers</a><a href="Register.html" class="nav-join">Join Challenge</a></div></div></nav>
+<div class="page-header"><div class="hero-particles"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="container"><h1>Challenge Tasks</h1></div></div>
+<div class="content"><div class="container">
+<div class="fade-in">
+    <div class="card" style="margin-bottom:24px;">
+        <span class="card-tag">Task 1</span>
+        <h3>Self-supervised learning for 3D LSM image segmentation under <strong>fixed training data conditions</strong></h3>
+        <p>Participants are restricted to using the provided, processed image data for methodology development. Different from the 2025 edition, we will provide <strong>cropped, unannotated patches for SSL</strong> rather than the original raw 3D LSM images.</p>
+        <br>
+        <p>The patches encompass a wide range of biological structures in LSM, and as in the 2025 edition, these biological structures can be categorized into two types: isolated structures and contiguous structures. Isolated structures are spatially distinct, unconnected components, such as cell nuclei, c-Fos+ cells, or pathological formations like amyloid-beta plaques. Contiguous structures, in contrast, are physically continuous, connected structures, such as blood vessels or nerves.</p>
+        <br>
+        <p>In general, for Task 1, participants will be provided with a training dataset consisting of two subsets:</p>
+        <p style="margin-top:10px"><strong>1. Unannotated subset:</strong> a large collection of patches cropped and preprocessed from large 3D LSM images of both isolated sparse, isolated dense, contiguous sparse, and contiguous dense structures derived from multiple specimens. This subset includes more than 35,050 patches of size 300×300×300 voxels. These unannotated patches are intended for model pretraining using SSL, allowing models to learn generalizable representations of diverse biological structures.</p>
+        <p style="margin-top:10px"><strong>2. Annotated subset:</strong> a curated selection of 3D LSM image patches representing the same isolated sparse, isolated dense, contiguous sparse, and contiguous dense structures in the unannotated subset, but with precise manual annotations, totalling over 210 patches of size 200×200×200 voxels. This subset enables participants to fine-tune their models for the general segmentation of different structures, leveraging the pre-training phase.</p>
+        <br>
+        <p>For detailed dataset descriptions, see the <a href="Dataset-Task1.html">Dataset for Task 1</a>.</p>
+    </div>
+    <div class="card">
+        <span class="card-tag">Task 2</span>
+        <h3>Self-supervised learning for 3D LSM image segmentation under <strong>open data conditions</strong></h3>
+        <p>This task is dedicated to studying the data scaling effects when applying SSL to light-sheet microscopy domain. Participants are allowed to leverage arbitrary amounts of data for SSL. We will provide access to <strong>the full set of original unannotated 3D LSM images</strong> used in Task 1, but before any cropping or preprocessing. Participants may therefore explore their own preprocessing or curation pipelines to construct pretraining datasets for SSL. Moreover, <strong>participants are encouraged to incorporate any additional public or private LSM data</strong>.</p>
+        <br>
+        <p>The annotated training set provided by us will remain the same as in Task 1, and the finetuning stage is constrained to use only this annotated training set, without any external annotated data.</p>
+        <br>
+        <p>For detailed dataset descriptions, see the <a href="Dataset-Task2.html">Dataset for Task 1</a>.</p>
+    </div>
+</div>
+</div></div>
+<footer class="footer"><div class="container"><p>© 2026 <a href="https://www.helmholtz-munich.de/en/bioengineering-center/ibio" target="_blank">Institute for Intelligent Biotechnologies</a>, Helmholtz Munich</p><p style="margin-top:6px">Contact: <a href="mailto:Ying.Chen@campus.lmu.de">Ying.Chen@campus.lmu.de</a></p></div></footer><script src="main.js"></script></body></html>
